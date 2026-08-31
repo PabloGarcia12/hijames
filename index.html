@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>hiJames.io — Your private execution team</title>
+<meta name="description" content="hiJames.io is your private execution team. You have the ideas. We make them happen.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:#0E7AFE;
+  --ink:#090b0f;
+  --muted:#686d75;
+  --line:#eceef1;
+  --acid:#b8ff2c;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(calc(100% - 44px),var(--max));margin:auto}
+.nav{
+  position:fixed;z-index:60;top:15px;left:50%;transform:translateX(-50%);
+  width:min(calc(100% - 30px),var(--max));height:52px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 9px 0 19px;
+  border:1px solid rgba(10,10,10,.07);border-radius:999px;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(22px) saturate(170%);
+  box-shadow:0 10px 34px rgba(0,0,0,.055)
+}
+.brand{display:flex;align-items:center;white-space:nowrap}
+.brand img{display:block;width:112px;height:auto}
+.navlinks{display:flex;gap:27px;font-size:11px;color:#6c7178}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:0;border-radius:999px;padding:11px 17px;background:var(--blue);color:#fff;
+  font:600 12px Poppins,sans-serif;transition:.2s ease;cursor:pointer
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(14,122,254,.25)}
+
+.hero{min-height:735px;display:flex;align-items:center;padding:130px 0 82px;position:relative;overflow:hidden}
+.hero:after{
+  content:"";position:absolute;right:-80px;top:90px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(66,245,255,.10),rgba(255,255,255,0) 70%);pointer-events:none
+}
+.eyebrow,.kicker{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#888d94;margin-bottom:18px}
+.hero h1{font-size:clamp(58px,7.9vw,105px);line-height:.94;letter-spacing:-.062em;margin:0 0 27px;max-width:990px;font-weight:500}
+.hero h1 .shine{background:linear-gradient(90deg,#111 0%,#111 38%,#7d3cff 56%,#00d9ff 72%,#111 88%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}@keyframes shine{to{background-position:-220% center}}
+.hero .sub{font-size:14px;line-height:1.65;color:#666b73;max-width:610px;margin:0}
+.hero-actions{display:flex;align-items:center;gap:13px;margin-top:29px;flex-wrap:wrap}
+.micro{font-size:12px;color:#969aa0}
+
+.blue-section{background:var(--blue);color:white;padding:88px 0}
+.blue-section .kicker{color:rgba(255,255,255,.64)}
+.blue-section h2{font-size:clamp(44px,5.5vw,74px);line-height:.98;letter-spacing:-.055em;margin:0 0 22px;font-weight:500}
+.blue-section h2 span{color:var(--acid)}
+.blue-section p{max-width:670px;color:rgba(255,255,255,.82);font-size:15px;line-height:1.65;margin:0}
+.foundation-track{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:45px}
+.foundation-track div{text-align:center;padding:16px 10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:11px;font-size:10px}
+
+.section{padding:92px 0;border-top:1px solid var(--line)}
+.section h2{font-size:clamp(43px,5.4vw,70px);line-height:.99;letter-spacing:-.052em;margin:0 0 24px;font-weight:500}
+.lead{font-size:15px;line-height:1.7;color:#676c74;max-width:720px}
+
+.message-demo{display:grid;grid-template-columns:.78fr 1.22fr;gap:100px;align-items:center;margin-top:35px}
+.phone{max-width:370px;border:1px solid #e5e6e8;border-radius:38px;padding:16px;background:#fbfbfc;box-shadow:0 25px 60px rgba(0,0,0,.08)}
+.phonebar{height:20px;width:78px;background:#111;border-radius:999px;margin:0 auto 20px}
+.bubble{padding:13px 15px;border-radius:17px;margin:9px 0;font-size:11px;line-height:1.5}
+.me{background:var(--blue);color:white;margin-left:28px;border-bottom-right-radius:6px}
+.james{background:#e9eaed;margin-right:28px;border-bottom-left-radius:6px}
+.voice-recording{display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 13px}
+.recording-dot{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 0 rgba(255,59,48,.55);animation:recordPulse 1.35s ease-out infinite}
+.recording-time{font-variant-numeric:tabular-nums;font-weight:500;min-width:29px}
+.waveform{height:24px;flex:1;display:flex;align-items:center;gap:3px;overflow:hidden}
+.waveform i{display:block;width:3px;height:6px;flex:1;max-width:4px;border-radius:99px;background:rgba(255,255,255,.82);transform-origin:center;animation:voiceWave .85s ease-in-out infinite alternate}
+.waveform i:nth-child(2n){animation-delay:-.32s}.waveform i:nth-child(3n){animation-delay:-.58s}.waveform i:nth-child(5n){animation-delay:-.18s}
+.recording-mic{width:25px;height:25px;flex:0 0 25px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16);font-size:13px;animation:micGlow 1.35s ease-in-out infinite}
+@keyframes voiceWave{0%{height:5px;opacity:.58}100%{height:22px;opacity:1}}
+@keyframes recordPulse{70%{box-shadow:0 0 0 7px rgba(255,59,48,0)}100%{box-shadow:0 0 0 0 rgba(255,59,48,0)}}
+@keyframes micGlow{50%{background:rgba(255,255,255,.28);transform:scale(1.05)}}
+.workflow{display:grid;gap:8px}
+.flowcard{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px}
+.flowcard span:last-child{font-size:10px;color:#9a9ea4}
+.channels{display:flex;gap:7px;flex-wrap:wrap;margin-top:19px}
+.pill{border:1px solid #e3e5e8;border-radius:999px;padding:7px 11px;font-size:10px}
+
+.audience{padding:86px 0;overflow:hidden}
+.audience-grid{display:grid;grid-template-columns:minmax(0,760px);align-items:center;min-height:390px}
+.audience h2{font-size:clamp(44px,5.3vw,69px);line-height:.99;letter-spacing:-.054em;margin:0 0 22px;font-weight:500}
+.roles{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 25px}
+.parallel{color:#4169ff;font-weight:500;margin-top:22px;font-size:13px}
+
+.engagement-group{margin-top:42px}
+.engagement-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:14px;padding:0 2px}
+.engagement-head h3{font-size:13px;margin:0;font-weight:600;letter-spacing:.02em}
+.engagement-head p{font-size:10px;color:#858a91;max-width:470px;margin:0;line-height:1.55;text-align:right}
+.packages{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.pricecard{border:1px solid var(--line);border-radius:24px;padding:28px;background:#fff;display:flex;flex-direction:column;min-height:100%;overflow:hidden}
+.pricecard.featured{border-color:#d8ff93;box-shadow:0 18px 45px rgba(174,255,44,.08)}
+.pricecard.project-premium{border-color:#d9e8ff;background:linear-gradient(180deg,#fff 0%,#f8fbff 100%)}
+.tag{display:inline-block;align-self:flex-start;font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:#efffcf;padding:5px 8px;border-radius:999px}
+.tag.blue{background:#edf5ff;color:var(--blue)}
+.pricecard h3{font-size:19px;margin:18px 0 0}
+.price{font-size:34px;font-weight:600;letter-spacing:-.04em;margin:5px 0 14px}
+.price small{font-size:10px;color:#888;font-weight:400}
+.pricecard p{font-size:10px;line-height:1.62;color:#686d74;margin:0}
+.card-promise{min-height:50px;font-size:11px!important}
+.card-for{font-size:9px!important;color:#969aa0!important;margin:8px 0 0!important}
+.service-phase{margin-top:20px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fafbfc}
+.service-phase.monthly{background:#f7fbff;border-color:#e4efff}
+.service-phase.launch{background:#fbfcff;border-color:#e5edff}
+.phase-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.phase-label{font-size:9px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--blue)}
+.phase-note{font-size:9px;color:#969aa0}
+.service-phase ul{list-style:none;padding:0;margin:0}
+.service-phase li{font-size:10px;line-height:1.5;padding:6px 0;border-bottom:1px solid rgba(9,11,15,.06)}
+.service-phase li:last-child{border-bottom:0}
+.service-phase li::before{content:"✓";color:var(--blue);font-weight:600;margin-right:7px}
+.features{list-style:none;margin:19px 0 18px;padding:0}
+.features li{font-size:10px;padding:7px 0;border-bottom:1px solid #eef0f2}
+.features li::before{content:"✓";color:var(--blue);font-weight:600;margin-right:7px}
+.package-details{margin:0 0 20px;border-top:1px solid var(--line)}
+.package-details summary{list-style:none;cursor:pointer;font-size:10px;font-weight:500;color:var(--blue);padding:12px 0;display:flex;align-items:center;justify-content:space-between}
+.package-details summary::-webkit-details-marker{display:none}
+.package-details summary::after{content:"+";font-size:15px;font-weight:300;color:#8b9097}
+.package-details[open] summary::after{content:"–"}
+.detail-groups{padding:2px 0 4px}
+.detail-group{margin:12px 0 0}
+.detail-label{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:#a0a4aa;font-weight:600;margin-bottom:5px}
+.detail-group ul{list-style:none;padding:0;margin:0}
+.detail-group li{font-size:10px;color:#656a72;padding:4px 0;line-height:1.45}
+.pricecard .btn{align-self:flex-start;margin-top:auto}
+.package-note{font-size:10px!important;color:#a0a4aa!important;margin-top:12px!important}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:43px}
+.step{border-top:1px solid #dfe1e4;padding-top:15px}
+.num{font-size:10px;color:#a0a3a9}
+.step h3{font-size:12px;margin:22px 0 8px}
+.step p{font-size:10px;line-height:1.5;color:#777c83}
+
+.james-call{position:relative;overflow:hidden;background:var(--blue);color:#fff;padding:73px 0;isolation:isolate}
+.call-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.call-kicker{display:block;font-size:10px;letter-spacing:.14em;font-weight:600;opacity:.67;margin-bottom:24px}
+.call-intro h2{margin:0;font-size:clamp(50px,5.6vw,76px);line-height:.94;letter-spacing:-.06em;font-weight:500}
+.call-intro h2 span{color:var(--acid)}
+.call-intro p{font-size:13px;line-height:1.68;opacity:.84;margin:30px 0}
+.call-status{margin-top:34px;display:inline-flex;align-items:center;gap:7px;padding:8px 11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:999px;font-size:10px}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 13px var(--acid)}
+.james-form{background:#fff;color:var(--ink);border-radius:25px;padding:29px;box-shadow:0 35px 85px rgba(0,0,0,.16)}
+.form-step{position:relative;padding:0 0 22px 32px;margin-bottom:22px;border-bottom:1px solid #eceef1}
+.step-number{position:absolute;left:0;top:3px;font-size:10px;color:#9a9da3}
+.form-step label{display:block;font-size:14px;font-weight:500;margin-bottom:10px}
+.field-note{margin:-4px 0 11px;font-size:10px;color:#858990}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+input,textarea{width:100%;border:0;outline:none;border-radius:12px;background:#f4f5f7;padding:12px 13px;font-family:inherit;font-size:10px}
+input:focus,textarea:focus{background:#fff;box-shadow:0 0 0 2px var(--blue)}
+textarea{min-height:92px;resize:vertical;line-height:1.5}
+.contact-options{display:flex;flex-wrap:wrap;gap:6px}
+.contact-choice{appearance:none;border:1px solid #e1e3e7;background:#fff;border-radius:999px;padding:7px 10px;font:10px Poppins;cursor:pointer}
+.contact-choice.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.contact-fields{margin-top:11px}
+.contact-fields input{transition:background .2s ease,box-shadow .2s ease}
+.contact-fields input.is-needed{background:#fff;box-shadow:0 0 0 1px rgba(14,122,254,.32)}
+.contact-guidance{display:block;margin-top:7px;color:#858990;font-size:9px;line-height:1.5}
+.microcopy{display:block;margin-top:8px;color:#9a9da3;font-size:10px}
+.send-james{width:62%;margin:0 auto;border:0;background:var(--blue);color:white;border-radius:999px;padding:13px 16px;display:flex;justify-content:space-between;font:600 10px Poppins;cursor:pointer}
+.form-footer{text-align:center;color:#999da3;font-size:10px;line-height:1.55;margin-top:13px}
+.success{display:none;text-align:center;padding:42px 10px}
+
+.stack{padding:88px 0 75px;overflow:hidden;background:linear-gradient(90deg,#fff 0%,#fff 55%,#f4f9ff 100%)}
+.stack-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:end}
+.stack h2{font-size:clamp(48px,5.6vw,73px);line-height:.96;letter-spacing:-.055em;margin:0;font-weight:500}
+.stack h2 span{color:var(--blue)}
+.stack-copy{font-size:13px;line-height:1.65;color:#72777e;max-width:430px}
+.track-wrap{overflow:hidden;margin-top:34px}
+.platform-track{display:flex;gap:10px;width:max-content;animation:scroll 29s linear infinite}
+.platform-track.second{margin-top:11px;animation-direction:reverse;animation-duration:32s}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.tool-pill{min-width:144px;height:48px;border:1px solid #e7e9ec;border-radius:999px;background:#fff;display:flex;align-items:center;gap:10px;padding:0 14px;font-size:10px;box-shadow:0 7px 20px rgba(0,0,0,.025)}
+.tool-icon{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#f3f4f6;font-weight:600}
+.tool-icon.blue{background:#0a66c2;color:white} .tool-icon.pink{background:#fff0f5;color:#e1306c} .tool-icon.orange{background:#fff1eb;color:#e34f26}
+.tool-icon.yellow{background:#fff9c8} .tool-icon.dark{background:#111;color:white}
+
+.brand-section{padding:84px 0 70px;text-align:center}
+.brand-section h2{font-size:clamp(43px,5.1vw,67px);line-height:.98;letter-spacing:-.055em;margin:0;font-weight:500}
+.brand-section h2 span{color:var(--blue)}
+.brand-section .lead{margin:20px auto 0;font-size:11px;max-width:600px}
+.logo-field{position:relative;min-height:330px;margin:36px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.logo-grid{position:absolute;inset:18px 4px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(3,1fr);gap:10px;align-items:center}
+.brand-logo{opacity:.12;filter:grayscale(1);font-size:13px;font-weight:600;transition:.25s}
+.brand-logo.revealed{opacity:1;filter:none;transform:translateY(-2px)}
+.center-message{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(255,255,255,.9);border:1px solid #e8eaed;border-radius:22px;padding:20px 27px;box-shadow:0 15px 45px rgba(0,0,0,.06);backdrop-filter:blur(12px);font-size:18px;line-height:1.2}
+.center-message span{color:var(--blue)}
+.spotlight{position:absolute;width:220px;height:220px;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(14,122,254,.12),rgba(14,122,254,0) 70%);opacity:0}
+.logo-field:hover .spotlight{opacity:1}
+.brand-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-top:20px;text-align:left;font-size:10px;color:#777;line-height:1.6}
+.signal{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:7px 10px}
+
+.not{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
+.not h2{font-size:clamp(47px,5.5vw,72px)}
+.no-list{display:grid;gap:0}
+.no-list div{font-size:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+
+.final{padding:105px 0 75px;text-align:center;background:radial-gradient(circle at 95% 20%,rgba(66,245,255,.13),transparent 24%),radial-gradient(circle at 5% 82%,rgba(255,79,216,.07),transparent 25%)}
+.final h2{font-size:20px;letter-spacing:-.03em;margin:0 0 16px;font-weight:600}
+.final .lead{margin:auto;font-size:12px}
+.final .btn{margin-top:20px}
+.final-tagline{margin-top:55px;font-size:10px;font-weight:500}
+.final-tagline span{background:linear-gradient(90deg,#7d3cff,#00bfe8,#61db00);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer{padding:22px 0 30px;border-top:1px solid var(--line);font-size:10px;color:#989ca2}
+.footer .wrap{display:flex;justify-content:space-between;gap:20px}
+.footer-links{display:flex;align-items:center;gap:8px}
+.footer-links a{transition:color .2s ease}
+.footer-links a:hover{color:var(--ink)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+  .navlinks{display:none} .brand{font-size:11px}
+  .hero{min-height:auto;padding:130px 0 78px} .hero h1{font-size:clamp(50px,14vw,72px)}
+  .foundation-track{grid-template-columns:repeat(3,1fr)}
+  .message-demo,.audience-grid,.packages,.call-wrap,.stack-head,.not{grid-template-columns:1fr}
+  .engagement-head{align-items:flex-start;flex-direction:column;gap:7px}.engagement-head p{text-align:left}
+  .message-demo{gap:45px}
+  .steps{grid-template-columns:1fr 1fr}
+  .call-wrap{gap:38px} .james-form{padding:24px 19px} .field-row{grid-template-columns:1fr}
+  .stack-head{gap:25px} .brand-footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){
+  .wrap{width:min(calc(100% - 28px),var(--max))}
+  .hero h1{font-size:49px} .blue-section h2,.section h2,.audience h2,.stack h2,.brand-section h2{font-size:43px}
+  .foundation-track{grid-template-columns:repeat(2,1fr)} .steps{grid-template-columns:1fr}
+  .packages{gap:12px} .pricecard{padding:21px}.service-phase{padding:15px}
+  .send-james{width:100%}
+  .center-message{width:86%;font-size:15px}
+  .logo-grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(5,1fr)}
+  .logo-field{min-height:440px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto} .reveal{opacity:1;transform:none;transition:none} .platform-track,.recording-dot,.waveform i,.recording-mic{animation:none}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#top" aria-label="hiJames.io home"><img src="logo_hiJames.png" alt="hiJames.io"></a>
+  <div class="navlinks"><a href="#work">What we do</a><a href="#process">How it works</a><a href="#packages">Packages</a></div>
+  <a class="btn" href="#call">Schedule a private call ↗</a>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">Your private execution team.</div>
+    <h1>You have the ideas.<br><span class="shine">We make them<br>happen.</span></h1>
+    <p class="sub">Built for entrepreneurs and executives who need ideas turned into finished work — without adding more work to their internal team.</p>
+    <div class="hero-actions"><a class="btn" href="#call">Schedule a private call ↗</a><span class="micro">One team. One monthly fee. No hiring.</span></div>
+  </div>
+</section>
+
+<section class="blue-section" id="work">
+  <div class="wrap reveal">
+    <div class="kicker">THE FIRST PHASE</div>
+    <h2>First, we build the ship.<br><span>Then we sail it.</span></h2>
+    <p>We establish the complete digital foundation first, so every request that follows moves faster and stays consistent.</p>
+    <div class="foundation-track"><div>Brand</div><div>Platforms</div><div>Website</div><div>Search</div><div>Newsletter</div><div>Publishing</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="kicker reveal">WORKING WITH JAMES</div>
+    <h2 class="reveal">You steer.<br>We keep the ship moving.</h2>
+    <div class="message-demo">
+      <div class="phone reveal">
+        <div class="phonebar"></div>
+        <div class="bubble me voice-recording" role="status" aria-label="Recording a voice message">
+          <span class="recording-dot" aria-hidden="true"></span>
+          <span class="recording-time" id="recordingTime">0:00</span>
+          <span class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="recording-mic" aria-hidden="true">●</span>
+        </div>
+        <div class="bubble me">Hi James. Let’s change course on the Ocean project. Focus the landing page more on investors.</div>
+        <div class="bubble james">Got it. We’re on it.</div>
+        <div class="bubble james">New direction is ready for review. ✓</div>
+      </div>
+      <div class="workflow reveal">
+        <div class="flowcard"><span>Direction received</span><span>00:00</span></div>
+        <div class="flowcard"><span>Copy + creative</span><span>IN PROGRESS</span></div>
+        <div class="flowcard"><span>Web implementation</span><span>NEXT</span></div>
+        <div class="flowcard"><span>Ready for review</span><span>✓</span></div>
+        <div class="channels"><span class="pill">Voice message</span><span class="pill">WhatsApp</span><span class="pill">Message</span><span class="pill">Email</span></div>
+        <p class="lead" style="font-size:11px;margin-top:10px">No briefs to five agencies. No chasing freelancers. No explaining the same project repeatedly.<br><b>One conversation. One crew.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="wrap audience-grid">
+    <div class="reveal">
+      <div class="kicker">WHO IT'S FOR</div>
+      <h2>Built for people with<br>more ideas than time.</h2>
+      <div class="roles"><span class="pill">Founders</span><span class="pill">Entrepreneurs</span><span class="pill">CEOs</span><span class="pill">Presidents</span><span class="pill">CFOs</span></div>
+      <p class="lead" style="font-size:12px">For leaders with an internal team who can’t — or simply don’t want to — redirect that team every time a new company, campaign, website or personal project needs to move.</p>
+      <div class="parallel">We are the parallel execution team.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="packages">
+  <div class="wrap">
+    <div class="kicker reveal">WAYS TO WORK WITH HIJAMES</div>
+    <h2 class="reveal">One idea or<br>ideas every week.</h2>
+    <p class="lead reveal" style="font-size:12px">Choose a one-time build with a clear finish line, or keep HiJames beside you as your ongoing private execution team.</p>
+
+    <div class="engagement-group reveal">
+      <div class="engagement-head"><h3>ONE-TIME LAUNCH PACKAGES</h3><p>Some ideas need a launch. Others need a crew. Above, we launch it. Below, we run it with you.</p></div>
+      <div class="packages">
+        <article class="pricecard">
+          <span class="tag blue">ONE-TIME LAUNCH</span><h3>Launch</h3><div class="price">$4,200</div>
+          <p class="card-promise">Your idea, live and ready to share.</p>
+          <p class="card-for">For the founder who has the idea but not the time — one clean page to put in front of investors, partners, or the world.</p>
+          <div class="service-phase launch"><div class="phase-head"><span class="phase-label">What you get</span></div><ul><li>A custom-designed landing page — built for you, not a template</li><li>All the copy written for you — strategy, structure, and every word</li><li>A mobile-responsive build that works on any device</li><li>A contact or booking form connected to your email</li><li>SEO, AI-search setup, and analytics installed and configured</li><li>A custom domain, connected and ready to share</li><li>Testing, one round of revisions, and launch — delivered live and working</li></ul></div>
+          <a class="btn" href="#call">Start with Launch ↗</a>
+        </article>
+
+        <article class="pricecard project-premium">
+          <span class="tag blue">LAUNCH + CONTENT ENGINE</span><h3>Launch + Engine</h3><div class="price">$8,500</div>
+          <p class="card-promise">Your idea, live — plus everything to keep it moving.</p>
+          <p class="card-for">For the founder who wants more than a page — a brand, a set of videos, and a content engine that keeps producing in their voice.</p>
+          <div class="service-phase launch"><div class="phase-head"><span class="phase-label">Everything in Launch, plus —</span></div><ul><li>A custom brand kit — logo mark, colors, and type your whole presence is built on</li><li>A 15-second intro video to open your page or your pitch</li><li>A set of 5-second AI videos for your page and social use</li><li>A Claude skill trained on your brand guide — so everything stays on-voice</li><li>A Claude skill for Instagram posts — on-brand content on demand</li><li>A Claude skill for X posts — same voice, built for the platform</li><li>A Claude skill for LinkedIn posts — for the investors and partners who matter</li><li>An automated email sequence that follows up with every new lead</li><li>A Flodesk newsletter template, set up and ready to send from day one</li></ul></div>
+          <a class="btn" href="#call">Go with Launch + Engine ↗</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="engagement-group reveal">
+      <div class="engagement-head"><h3>MONTHLY CREWS</h3><p>One-time launch above. Ongoing crew below.</p></div>
+      <div class="packages">
+        <article class="pricecard">
+          <span class="tag">FOUNDATION + MONTHLY SUPPORT</span><h3>Skipper</h3><div class="price">$4,800 <small>/ month</small></div>
+          <p class="card-promise">We build your presence, then keep it polished, active, and current.</p>
+          <p class="card-for">For businesses that need dependable creative and digital support without hiring an in-house team.</p>
+          <div class="service-phase"><div class="phase-head"><span class="phase-label">Phase 01 · We build it</span><span class="phase-note">Your foundation</span></div><ul><li>Strategy, positioning, and visual direction</li><li>A custom 4–6 page website, fully written</li><li>Your first 20 designed posts with captions</li><li>Up to 5 branded social profiles, set up</li><li>An email system with 3 branded templates</li><li>SEO, AI-search, analytics, and lead capture</li><li>A starter prompt library in your brand voice</li></ul></div>
+          <div class="service-phase monthly"><div class="phase-head"><span class="phase-label">Phase 02 · We run it</span><span class="phase-note">Every month</span></div><ul><li>Daily social posting — up to 2 Instagram and 2 X posts per day</li><li>Published to your channels, or delivered ready-to-post if you'd rather run your own</li><li>Designed posts, carousels, and platform adaptations</li><li>AI-generated 5–10 second micro-videos</li><li>One newsletter or email campaign each week</li><li>Ongoing website, offer, and CTA updates</li><li>Maintenance, monitoring, and brand consistency</li></ul></div>
+          <details class="package-details"><summary>Your first 20 posts, planned</summary><div class="detail-groups"><div class="detail-group"><div class="detail-label">Your starter content library</div><ul><li>Brand story</li><li>Service and product spotlights</li><li>Educational and authority content</li><li>FAQs and testimonials</li><li>Calls to action</li></ul></div></div></details>
+          <a class="btn" href="#call">Put Skipper on board ↗</a><p class="package-note">Minimum 6-month engagement.</p>
+        </article>
+
+        <article class="pricecard featured">
+          <span class="tag">HIGHER VELOCITY</span><h3>Captain</h3><div class="price">$6,800 <small>/ month</small></div>
+          <p class="card-promise">Your private creative department — built for attention, authority, and momentum.</p>
+          <p class="card-for">For leaders who want an active content, visibility, and campaign engine, not just upkeep.</p>
+          <div class="service-phase"><div class="phase-head"><span class="phase-label">Phase 01 · We build it</span><span class="phase-note">Expanded foundation</span></div><ul><li>Everything in the Skipper foundation</li><li>A complete website design or strategic redesign</li><li>Your first 30 designed posts with captions</li><li>An initial AI micro-video collection</li><li>A lead magnet and campaign landing page</li><li>A welcome email sequence</li><li>90-day content direction and advanced prompt library</li></ul></div>
+          <div class="service-phase monthly"><div class="phase-head"><span class="phase-label">Phase 02 · We grow it</span><span class="phase-note">Every month</span></div><ul><li>Daily social posting — up to 3 Instagram, 3 X, and daily LinkedIn</li><li>Published to your channels, or delivered ready-to-post if you'd rather run your own</li><li>Recurring short-form and AI video series</li><li>Voice notes turned into finished thought leadership</li><li>A weekly newsletter or authority email</li><li>Campaigns, landing pages, and lead magnets on a rolling basis</li><li>Monthly performance review and conversion improvements</li><li>Priority execution and faster turnaround</li></ul></div>
+          <details class="package-details"><summary>Your content engine</summary><div class="detail-groups"><div class="detail-group"><div class="detail-label">From your expertise to every channel</div><ul><li>Authority and thought-leadership series</li><li>Short-form and AI video</li><li>Campaign and launch sequences</li><li>Lead magnets and landing pages</li><li>Newsletter and email authority content</li></ul></div></div></details>
+          <a class="btn" href="#call">Make Captain your crew ↗</a><p class="package-note">Minimum 6-month engagement.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="kicker reveal">GETTING ABOARD</div>
+    <h2 class="reveal">It starts with one<br>conversation.</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3>Introduction</h3><p>A HiJames member introduces us.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Private call</h3><p>30–45 minutes to understand you, the project and where you want to go.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3>Agreement</h3><p>If both sides believe it is a fit, we define the engagement and start.</p></div>
+      <div class="step reveal"><div class="num">04</div><h3>Welcome aboard.</h3><p>Your private execution team begins building.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="james-call" id="call">
+  <div class="wrap call-wrap">
+    <div class="call-intro reveal"><span class="call-kicker">START A CONVERSATION</span><h2>Have something<br><span>in your head?</span></h2><p>Don't prepare a presentation.<br>Don't write a formal brief.<br>Just tell James what you're thinking.</p><div class="call-status"><span class="status-dot"></span>Private conversations · Next 72 hours</div></div>
+    <form class="james-form reveal" id="jamesForm">
+      <div id="fields">
+        <div class="form-step"><span class="step-number">01</span><label>Who's talking?</label><div class="field-row"><input name="name" autocomplete="name" aria-label="Your name" placeholder="Your name" required><input name="company" autocomplete="organization" aria-label="Company or project" placeholder="Company / project"></div></div>
+        <div class="form-step"><span class="step-number">02</span><label>Perfect time for a call?</label><p class="field-note">Give us your ideal window sometime in the next 72 hours.</p><input name="preferred_time" aria-label="Preferred time for a call" placeholder="Tomorrow around 4pm works perfectly"></div>
+        <div class="form-step"><span class="step-number">03</span><label>How do you want to talk?</label><div class="contact-options"><button type="button" class="contact-choice active" data-contact="WhatsApp">WhatsApp</button><button type="button" class="contact-choice" data-contact="Phone">Phone</button><button type="button" class="contact-choice" data-contact="Zoom">Zoom</button><button type="button" class="contact-choice" data-contact="Google Meet">Google Meet</button><button type="button" class="contact-choice" data-contact="Surprise me">Surprise me</button></div><input type="hidden" id="contactMethod" name="contact_method" value="WhatsApp"><div class="field-row contact-fields"><input type="email" id="contactEmail" name="email" autocomplete="email" aria-label="Email address" placeholder="Email address" required><input type="tel" id="contactPhone" name="phone" autocomplete="tel" aria-label="Phone or WhatsApp number" placeholder="Phone / WhatsApp number" required></div><span class="contact-guidance" id="contactGuidance">Add your email and WhatsApp number so James can reach you.</span></div>
+        <div class="form-step"><span class="step-number">04</span><label>What's on your mind?</label><textarea name="message" aria-label="Tell James what's on your mind" placeholder="A new company. A website. A campaign. A half-formed idea. Tell us exactly the way you'd tell a colleague..." required></textarea><span class="microcopy">Rough ideas welcome. That's the point.</span></div>
+        <button class="send-james" type="submit"><span>Send it to James</span><span>↗</span></button><div class="form-footer">No sales deck. No account manager.<br>Just a private conversation with the team that executes.</div>
+      </div>
+      <div class="success" id="success"><h3>Got it. ✓</h3><p>James has the brief.<br>We'll take it from here.</p></div>
+    </form>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="wrap">
+    <div class="stack-head reveal"><div><div class="kicker">THE STACK</div><h2>One crew.<br><span>Every<br>channel.</span></h2></div><p class="stack-copy">Your ideas move through the right platforms without you managing a dozen tools, freelancers or workflows.</p></div>
+    <div class="track-wrap reveal">
+      <div class="platform-track">
+        <div class="tool-pill"><span class="tool-icon">●</span>Reddit</div><div class="tool-pill"><span class="tool-icon pink">◎</span>Instagram</div><div class="tool-pill"><span class="tool-icon">♪</span>TikTok</div><div class="tool-pill"><span class="tool-icon blue">in</span>LinkedIn</div><div class="tool-pill"><span class="tool-icon blue">f</span>Facebook</div><div class="tool-pill"><span class="tool-icon dark">X</span>X</div>
+        <div class="tool-pill"><span class="tool-icon">●</span>Reddit</div><div class="tool-pill"><span class="tool-icon pink">◎</span>Instagram</div><div class="tool-pill"><span class="tool-icon">♪</span>TikTok</div><div class="tool-pill"><span class="tool-icon blue">in</span>LinkedIn</div><div class="tool-pill"><span class="tool-icon blue">f</span>Facebook</div><div class="tool-pill"><span class="tool-icon dark">X</span>X</div>
+      </div>
+      <div class="platform-track second">
+        <div class="tool-pill"><span class="tool-icon yellow">M</span>Mailchimp</div><div class="tool-pill"><span class="tool-icon orange">5</span>HTML</div><div class="tool-pill"><span class="tool-icon dark">GEO</span>GEO</div><div class="tool-pill"><span class="tool-icon dark">AEO</span>AEO</div><div class="tool-pill"><span class="tool-icon dark">FL</span>Flodesk</div><div class="tool-pill"><span class="tool-icon dark">BH</span>beehiiv</div>
+        <div class="tool-pill"><span class="tool-icon yellow">M</span>Mailchimp</div><div class="tool-pill"><span class="tool-icon orange">5</span>HTML</div><div class="tool-pill"><span class="tool-icon dark">GEO</span>GEO</div><div class="tool-pill"><span class="tool-icon dark">AEO</span>AEO</div><div class="tool-pill"><span class="tool-icon dark">FL</span>Flodesk</div><div class="tool-pill"><span class="tool-icon dark">BH</span>beehiiv</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap not">
+    <div class="reveal"><div class="kicker">WHAT HIJAMES IS NOT</div><h2>Not another<br>agency.</h2></div>
+    <div class="no-list reveal"><div>No account managers passing your ideas down a chain.</div><div>No collection of disconnected freelancers.</div><div>No complicated project-management system to learn.</div><div>No need to brief five different specialists.</div><div><b>You talk. We execute.</b></div></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <div class="kicker">HAVE SOMETHING IN MIND?</div>
+    <h2>Hi James.</h2>
+    <p class="lead">Tell us what you're thinking.</p>
+    <a class="btn" href="#call">Schedule a private call ↗</a>
+    <p class="micro" style="margin-top:14px">HiJames engagements begin with a conversation. We simply see whether we're the right crew for the project.</p>
+    <div class="final-tagline">You have the ideas. <span>We make them happen.</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap"><span class="footer-links"><span>© 2026 HiJames</span><span>·</span><a href="privacy.html">Privacy</a><span>·</span><a href="terms.html">Terms</a></span><span>Your private execution team.</span></div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const contactMethod=document.getElementById('contactMethod');
+const contactEmail=document.getElementById('contactEmail');
+const contactPhone=document.getElementById('contactPhone');
+const contactGuidance=document.getElementById('contactGuidance');
+function setContactMethod(method){
+  const needsPhone=method==='WhatsApp'||method==='Phone';
+  contactMethod.value=method;
+  contactPhone.required=needsPhone;
+  contactPhone.classList.toggle('is-needed',needsPhone);
+  contactEmail.classList.toggle('is-needed',!needsPhone);
+  contactGuidance.textContent=needsPhone
+    ? `Add your email and ${method==='WhatsApp'?'WhatsApp number':'phone number'} so James can reach you.`
+    : `Add your email so James can arrange the ${method==='Surprise me'?'conversation':method+' call'}. Your phone number is optional.`;
+}
+document.querySelectorAll('.contact-choice').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.contact-choice').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  setContactMethod(b.dataset.contact);
+});
+setContactMethod('WhatsApp');
+const recordingTime=document.getElementById('recordingTime');
+let recordingSeconds=0;
+setInterval(()=>{
+  recordingSeconds=(recordingSeconds+1)%60;
+  recordingTime.textContent=`0:${String(recordingSeconds).padStart(2,'0')}`;
+},1000);
+document.getElementById('jamesForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('fields').style.display='none';
+  document.getElementById('success').style.display='block';
+});
+
+const field=document.getElementById('field'),spot=document.getElementById('spotlight'),brands=[...document.querySelectorAll('.brand-logo')];
+function revealBrands(x,y){
+  const fr=field.getBoundingClientRect(); spot.style.left=x+'px'; spot.style.top=y+'px';
+  brands.forEach(el=>{const r=el.getBoundingClientRect(),cx=r.left+r.width/2-fr.left,cy=r.top+r.height/2-fr.top;el.classList.toggle('revealed',Math.hypot(cx-x,cy-y)<145)})
+}
+if(field&&spot){
+  field.addEventListener('mousemove',e=>{const r=field.getBoundingClientRect();revealBrands(e.clientX-r.left,e.clientY-r.top)});
+  field.addEventListener('mouseleave',()=>brands.forEach(el=>el.classList.remove('revealed')));
+}
+</script>
+</body>
+</html>
