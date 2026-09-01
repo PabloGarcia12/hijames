@@ -474,21 +474,19 @@ document.getElementById('jamesForm').addEventListener('submit', async (e) => {
 
   const form = e.currentTarget;
   const button = form.querySelector('button[type="submit"]');
-  const originalText = button.textContent;
+  const originalHTML = button.innerHTML;
 
   button.disabled = true;
-  button.textContent = 'Sending...';
-
-  const selectedMethod = form.querySelector('input[name="method"]:checked');
+  button.innerHTML = '<span>Sending...</span><span>↗</span>';
 
   const data = {
-    name: form.querySelector('input[name="name"]').value,
-    company: form.querySelector('input[name="company"]').value,
-    preferred_time: form.querySelector('input[name="time"]').value,
-    contact_method: selectedMethod ? selectedMethod.value : '',
-    email: form.querySelector('input[name="email"]').value,
-    phone: form.querySelector('input[name="phone"]').value,
-    message: form.querySelector('textarea[name="message"]').value
+    name: form.elements['name'].value,
+    company: form.elements['company'].value,
+    preferred_time: form.elements['preferred_time'].value,
+    contact_method: form.elements['contact_method'].value,
+    email: form.elements['email'].value,
+    phone: form.elements['phone'].value,
+    message: form.elements['message'].value
   };
 
   try {
@@ -510,14 +508,12 @@ document.getElementById('jamesForm').addEventListener('submit', async (e) => {
     document.getElementById('success').style.display = 'block';
 
   } catch (error) {
-    console.error(error);
+    console.error('HiJames form error:', error);
 
-    alert(
-      "Something went wrong sending your message. Please try again."
-    );
+    alert('Something went wrong sending your message. Please try again.');
 
     button.disabled = false;
-    button.textContent = originalText;
+    button.innerHTML = originalHTML;
   }
 });
 
