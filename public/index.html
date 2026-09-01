@@ -469,10 +469,56 @@ setInterval(()=>{
   recordingSeconds=(recordingSeconds+1)%60;
   recordingTime.textContent=`0:${String(recordingSeconds).padStart(2,'0')}`;
 },1000);
-document.getElementById('jamesForm').addEventListener('submit',e=>{
+document.getElementById('jamesForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  document.getElementById('fields').style.display='none';
-  document.getElementById('success').style.display='block';
+
+  const form = e.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = button.textContent;
+
+  button.disabled = true;
+  button.textContent = 'Sending...';
+
+  const selectedMethod = form.querySelector('input[name="method"]:checked');
+
+  const data = {
+    name: form.querySelector('input[name="name"]').value,
+    company: form.querySelector('input[name="company"]').value,
+    preferred_time: form.querySelector('input[name="time"]').value,
+    contact_method: selectedMethod ? selectedMethod.value : '',
+    email: form.querySelector('input[name="email"]').value,
+    phone: form.querySelector('input[name="phone"]').value,
+    message: form.querySelector('textarea[name="message"]').value
+  };
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || 'Unable to send.');
+    }
+
+    document.getElementById('fields').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      "Something went wrong sending your message. Please try again."
+    );
+
+    button.disabled = false;
+    button.textContent = originalText;
+  }
 });
 
 const field=document.getElementById('field'),spot=document.getElementById('spotlight'),brands=[...document.querySelectorAll('.brand-logo')];
